@@ -1,4 +1,8 @@
 class Lasagna
+  Lasagna::EXPECTED_MINUTES_IN_OVEN = 40
+
+
+
   def remaining_minutes_in_oven(actual_minutes_in_oven)
     raise 'Please implement the Lasagna#remaining_minutes_in_oven method'
   end
@@ -11,3 +15,8 @@ class Lasagna
     raise 'Please implement the Lasagna#total_time_in_minutes method'
   end
 end
+
+lasagna = Lasagna.new
+    lasagna.remaining_minutes_in_oven(30)
+    lasagna.preparation_time_in_minutes(2)
+    lasagna.total_time_in_minutes(number_of_layers: 3, actual_minutes_in_oven: 20)
