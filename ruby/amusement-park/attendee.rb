@@ -7,7 +7,7 @@ class Attendee
     @height
   end
 
-  def pass_id?
+  def pass_id
     @pass_id
   end
 
