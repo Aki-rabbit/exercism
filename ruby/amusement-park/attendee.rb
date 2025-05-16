@@ -7,12 +7,12 @@ class Attendee
     @height
   end
 
-  def pass_id
+  def pass_id?
     @pass_id
   end
 
   def issue_pass!(pass_id)
-    @issue_pass = true
+    @pass_id = pass_id
   end
 
   def revoke_pass!
