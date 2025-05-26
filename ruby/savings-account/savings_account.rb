@@ -1,13 +1,28 @@
 module SavingsAccount
   def self.interest_rate(balance)
-    raise 'Please implement the SavingsAccount.interest_rate method'
+    if balance.negative?
+      Float 3.213
+    elsif balance < 1000
+      Float 0.5
+    elsif balance < 5000
+      Float 1.621
+    else  
+      Float 2.475
+    end
   end
 
   def self.annual_balance_update(balance)
-    raise 'Please implement the SavingsAccount.annual_balance_update method'
+    Float balance * (1 + (interest_rate(balance)/ 100))
   end
 
   def self.years_before_desired_balance(current_balance, desired_balance)
-    raise 'Please implement the SavingsAccount.years_before_desired_balance method'
+    years = 0
+    balance = current_balance
+    while balance < desired_balance
+      balance = annual_balance_update(balance)
+      years += 1
+    end
+    years
   end
 end
+
