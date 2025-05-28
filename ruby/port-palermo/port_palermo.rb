@@ -7,9 +7,9 @@ module Port
 
   def self.get_terminal(ship_identifier)
     if ship_identifier.to_s.start_with?("OIL" , "GAS")
-      'Terminal A'
+      :A
     else 
-      'Terminal B'
+      :B
     end
   end
 end
