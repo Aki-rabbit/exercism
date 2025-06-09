@@ -8,7 +8,7 @@ class BoutiqueInventory
   end
 
   def cheap
-    @items.select { |item| item[:price] < 30}
+    @items.select { |item| item[:price] < 30.00}
   end
 
   #quantity_by_sizeが空であるアイテムを全て返す
