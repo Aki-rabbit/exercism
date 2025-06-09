@@ -4,16 +4,16 @@ class BoutiqueInventory
   end
 
   def item_names
-    items.map { |item| item[:name]} .sort
+    @items.map { |item| item[:name]} .sort
   end
 
   def cheap
-    items.select { |item| item[:price] < 30}
+    @items.select { |item| item[:price] < 30}
   end
 
   #quantity_by_sizeが空であるアイテムを全て返す
   def out_of_stock
-    items.select { |item| item[:quantity_by_size].empty? }
+    @items.select { |item| item[:quantity_by_size].empty? }
   end
 
   # 指定された名前のアイテムの在庫を返す
