@@ -18,7 +18,7 @@ class BoutiqueInventory
 
   # 指定された名前のアイテムの在庫を返す
   def stock_for_item(name)
-    @items.each do |item|
+    @items.find do |item|
       return item[:quantity_by_size] if item[:name] == name
     end
   end
