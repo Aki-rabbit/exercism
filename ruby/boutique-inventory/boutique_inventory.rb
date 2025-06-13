@@ -18,8 +18,8 @@ class BoutiqueInventory
 
   # 指定された名前のアイテムの在庫を返す
   def stock_for_item(name)
-    found_item = @items.find { |item| item[:name] == name }
-    found_item[:quantity_by_size] 
+    @items.find do |item|
+      return item[:quantity_by_size] if item[:name] == name
     end
   end
 
@@ -29,4 +29,6 @@ class BoutiqueInventory
     end
   end
 
+  private
+  attr_reader :items
 end
