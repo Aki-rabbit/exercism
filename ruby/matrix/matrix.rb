@@ -5,3 +5,36 @@ Write your code for the 'Matrix' exercise in this file. Make the tests in
 To get started with TDD, see the `README.md` file in your
 `ruby/matrix` directory.
 =end
+
+#改行を含む文字列が与えられる
+#各行を左から右に、そして行を上から下へ読み進めた行のリスト
+#各列を上から下へ、そして列を左から右へ読み進めた列のリスト
+
+class Matrix
+    def initialize(input_string)
+        @row = RearrangeStrings.make_row(input_string) 
+        @column = RearrangeStrings.make_column(@row) 
+    end
+
+    class RearrangeStrings
+        def self.make_row(input_string)
+            input_string.split("\n").map do |row_str|
+                row_str.split(' ').map(&:to_i)
+            end
+        end
+
+        def self.make_column(rows_data)
+            rows_data.transpose.map do |column|
+                column.map(&:to_i)
+            end
+        end
+    end
+
+    def row(index)
+        @row[index - 1]
+    end
+
+    def column(index)
+        @column[index - 1]
+    end
+end
