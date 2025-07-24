@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require_relative 'tournament'
+require_relative 'tournament_ver2'
 
 class TournamentTest < Minitest::Test
   def test_just_the_header_if_no_input
