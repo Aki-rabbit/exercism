@@ -129,3 +129,4 @@ class AnagramTest < Minitest::Test
     assert_equal expected, anagrams
   end
 end
+git pull --rebase origin main
