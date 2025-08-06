@@ -12,15 +12,15 @@ class Anagram
         @sorted_word = sort_word(input_word)
     end
 
+    # @param input_word [String] ソートしたい単語
+    # @return [String] ソートされた単語
     def sort_word(input_word)
-        # @param input_word [String] ソートしたい単語
-        # @return [String] ソートされた単語
         input_word.downcase.chars.sort.join
     end
     
+    # @param possible_anagrams [Array<String>] アナグラムの候補リスト 
+    # @return [Array<String>] アナグラムのリスト
     def match(possible_anagrams)
-        # @param possible_anagrams [Array<String>] アナグラムの候補リスト 
-        # @return [Array<String>] アナグラムのリスト
         possible_anagrams.select do |word|
             is_anagram = sort_word(word) == @sorted_word
             not_same_word = @target_word.downcase != word.downcase
