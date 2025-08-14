@@ -8,7 +8,10 @@ git add .
 git commit -m "$problem_name 解答"
 git push origin main
 
+# ファイル名をハイフンからアンダースコアに変換
+file_name=$(echo $problem_name | tr '-' '_')
+
 # exercismに提出
-exercism submit ./ruby/$problem_name/lib/$problem_name.rb
+exercism submit ./ruby/$problem_name/$file_name.rb
 
 echo "解答のコミット、プッシュ、提出が完了しました。"
