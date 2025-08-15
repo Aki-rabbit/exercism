@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require_relative 'saddle_points'
+require_relative 'saddle_points_second'
 
 class SaddlePointsTest < Minitest::Test
   def test_can_identify_single_saddle_point
